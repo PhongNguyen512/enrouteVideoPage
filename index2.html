@@ -64,7 +64,6 @@
 
             <!--Start here--> 
             <div class="container ">
-
                 <div class="row breadcrumb mb-0 pb-0">
                     <div class="col">
                     
@@ -74,31 +73,71 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <!--Video-->
+
+                <!--Row 1-->
+                <div class="row pb-3">
                     <div class="col-4">
                         <div class="card text-center">
-                            <button id="VideoBTN" class="btn js-video-btn" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                            <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
                             </button>        
-                            <h4 class="card-title">How to register your screen</h4>
+                            <h5 class="card-title">How to register your screen</h5>
                         </div>
                     </div>
 
                     <div class="col-4">
                         <div class="card text-center">
-                            <button id="VideoBTN" class="btn js-video-btn" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                            <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
                             </button>        
-                            <h4 class="card-title">How to register your screen</h4>
+                            <h5 class="card-title">How to register your screen</h5>
                         </div>
                     </div>
 
                     <div class="col-4">
                         <div class="card text-center">
-                            <button id="VideoBTN" class="btn js-video-btn" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                            <button id="VideoBTN" class="btn js-video-btn  p-0" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
                             </button>        
-                            <h4 class="card-title">How to register your screen</h4>
+                            <h5 class="card-title">How to register your screen</h5>
                         </div>
                     </div>
                 </div>  
+                <!--End Row 1-->
+
+                <!--Row 2-->
+                <div class="row">
+                    <div class="col-3">
+                        <div class="card text-center">
+                            <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                            </button>        
+                            <h5 class="card-title">How to register your screen</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card text-center">
+                            <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                            </button>        
+                            <h5 class="card-title">How to register your screen</h5>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card text-center">
+                            <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                            </button>        
+                            <h5 class="card-title">How to register your screen</h5>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card text-center">
+                            <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                            </button>        
+                            <h5 class="card-title">How to register your screen</h5>
+                        </div>
+                    </div>
+                </div>  
+                <!--End Row 2-->
+
+                <!--End Video-->
                 
                 <!-- Manual PDF-->
                 <div class="card text-center my-3">
@@ -190,8 +229,6 @@
 
                     </div>
                 </div>
-
-                
                 <!--End of FAQ-->
 
             </div>
@@ -271,7 +308,9 @@
                     
                     let videoElement = document.createElement("video");
                     videoElement.setAttribute("poster",url);
-                    videoElement.setAttribute("height","175")
+                    // videoElement.setAttribute("height","175")
+                    videoElement.setAttribute('width', '100%');
+
 
                     arrayVideoBTN[i].appendChild(videoElement);
                 }                
