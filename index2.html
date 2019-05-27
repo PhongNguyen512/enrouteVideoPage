@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Dashboard</title>
+        <link href="https://cloud.enrouteviewmedia.com/img/taxi-26.png" type="image/x-icon" rel="icon" />
+        <link href="https://cloud.enrouteviewmedia.com/img/taxi-26.png" type="image/x-icon" rel="shortcut icon" />
+        <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cloud.enrouteviewmedia.com/css/bootstrap.min.css" />
+        
+        <link rel="stylesheet" type="text/css" href="https://cloud.enrouteviewmedia.com/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="https://cloud.enrouteviewmedia.com/css/cake.generic.css" />
+        <link rel="stylesheet" type="text/css" href="https://cloud.enrouteviewmedia.com/css/notification.css" />
+
+        <link rel="stylesheet" type="text/css" href="modaljs/css/modal-video.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/modal-video@2.0.1/css/modal-video.min.css">
+
+    </head>
+    <body class="page-pages-dashboard">
+        <div id="container">
+            <div id="header" class="not-printable">
+                <div id="wrapper">
+                <div id="logo">
+                    <a href="/pages/dashboard"
+                    ><img src="https://cloud.enrouteviewmedia.com/img/enroutelogo.png" height="60px"
+                    /></a>
+                </div>
+                <div id="logout" class="header-buttons">
+                    <a href="/users/logout"
+                    ><p>Logout</p>
+                    <img src="https://cloud.enrouteviewmedia.com/img/logout.png"
+                    /></a>
+                </div>
+                <div id="settings" class="header-buttons">
+                    <a href="/users/settings"
+                    ><p>Settings</p>
+                    <img src="https://cloud.enrouteviewmedia.com/img/settings-32.png"
+                    /></a>
+                </div>
+                <a
+                    id="manual-button"
+                    href="http://www.enrouteviewmedia.com/wp-content/uploads/2018/11/Enroute-LCD-Manuals-v1.2.pdf"
+                    target="_blank"
+                    class="link-button header-buttons"
+                    ><p>Manual</p></a
+                >
+                </div>
+                <div id="breadcrumbs" class="not-printable">
+
+                    <p><a href="/pages/dashboard">Home</a></p>
+
+                    <div class="system-status">
+                        <p>
+                        <b>130</b> devices (<span class="green">2</span> /
+                        <span class="red">128</span>)
+                        </p>
+                        <div class="green-bg circle"></div>
+                        <p>ttca-server is running</p>
+                    </div>
+                    <p id="save-status"></p>
+                </div>
+            </div>
+            <div id="hover-popup" class="hover-popup">Something</div>
+
+            <!--Start here--> 
+            <div class="container ">
+
+                <div class="row breadcrumb mb-0 pb-0">
+                    <div class="col">
+                    
+                        <p class="breadcrumb-item"><a>Home</a> </p>
+                        <p class="breadcrumb-item"><a>Some Where</a> </p>
+                        <p class="breadcrumb-item active"><a>Help</a> </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card text-center">
+                            <button id="VideoBTN" class="btn js-video-btn" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                            </button>        
+                            <h4 class="card-title">How to register your screen</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card text-center">
+                            <button id="VideoBTN" class="btn js-video-btn" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                            </button>        
+                            <h4 class="card-title">How to register your screen</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card text-center">
+                            <button id="VideoBTN" class="btn js-video-btn" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                            </button>        
+                            <h4 class="card-title">How to register your screen</h4>
+                        </div>
+                    </div>
+                </div>  
+                
+                <!-- Manual PDF-->
+                <div class="card text-center my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6 text-left">
+                                <h4 class="card-title mt-0">Installation and operating manual for intaxi tablets</h4>
+                               
+                            </div>
+                            <div class="col-6 text-right">
+                                <a href="http://www.enrouteviewmedia.com/wp-content/uploads/2018/11/Enroute-LCD-Manuals-v1.2.pdf">
+                                    <img src="./images/pdf.png" style="width:37px; height:39px" alt="Operation Manual">
+                                </a>  
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+                <!--End of Manual PDF-->
+
+                <!--FAQ-->
+                <div class="card text-center my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6 text-left">
+                                <h4 class="card-title mt-0">FAQ</h4>          
+                            </div>     
+                        </div>
+                        <div class="row text-left">
+                            <div class="col"> 
+                                <div id="accordion">
+                                    <!--Question 1-->
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            <h5 class="card-title my-0" >
+                                                Question 1?
+                                            </h5>            
+                                        </div>
+                                    
+                                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Question 2-->
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <h5 class="card-title my-0" >Question 2?</h5>            
+                                        </div>
+                                    
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Question 3-->
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            <h5 class="card-title my-0" >Question 3?</h5>            
+                                        </div>
+                                    
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Question 4-->
+                                    <div class="card">
+                                        <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            <h5 class="card-title my-0" >Question 4?</h5>            
+                                        </div>
+                                    
+                                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>  
+                        </div>
+
+                    </div>
+                </div>
+
+                
+                <!--End of FAQ-->
+
+            </div>
+
+            <!--End here-->
+
+            <div class="colored-section green mt-5">
+                <div class="lined-header">
+                <h1>Overview</h1>
+                </div>
+                <div class="large-buttons">
+                <a href="/admin/view_regions"
+                    ><div class="large-button">
+                    <p class="main">27</p>
+                    <p class="sub">Registered devices</p>
+                    </div></a>
+                <a href="/admin/view_devices"
+                    ><div class="large-button">
+                    <p class="main">4 hrs</p>
+                    <p class="sub">Device hours this week</p>
+                    </div></a>
+                <a href="/admin/view_devices"
+                    ><div class="large-button">
+                    <p class="main">2462 hrs</p>
+                    <p class="sub">Total device hours</p>
+                    </div></a>
+                <a href="/franchise/device_billing"
+                    ><div class="large-button">
+                    <p class="main">USD $2603.57</p>
+                    <p class="sub">in Agency transfers</p>
+                    </div></a>
+                </div>
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/popper.min.js"></script>
+        <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/dashboard.js"></script>
+        <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/default.js"></script>
+        <script src="modaljs/js/modal-video.js"></script>
+
+        <script>
+            var resizefunc = [];
+
+            window.addEventListener('DOMContentLoaded',function(){	
+                new ModalVideo(".js-video-btn");  
+
+                var arrayVideoBTN = [];
+                var arrayUrl = [];
+                var arrayVideoId = [];
+
+                arrayVideoBTN = document.querySelectorAll('#VideoBTN');
+
+                arrayVideoBTN.forEach(element => {
+                    arrayUrl.push(element.getAttribute("data-video-url"));
+
+                    arrayVideoId.push(youtube_parser(element.getAttribute("data-video-url")))
+                });
+
+                addVideoElement(arrayVideoBTN, arrayVideoId);
+            });  
+
+            //Get the video id from youtube video 
+            function youtube_parser(url){
+                var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+                var match = url.match(regExp);
+                return (match&&match[7].length==11)? match[7] : false;
+            }
+
+            //Add the <video> for display thumbnail
+            function addVideoElement(arrayVideoBTN, arrayVideoId) {               
+                for (let i = 0; i < arrayVideoBTN.length; i++) {       
+
+                    let url = "https://ytimg.googleusercontent.com/vi/"+arrayVideoId[i]+"/hqdefault.jpg";
+                    
+                    let videoElement = document.createElement("video");
+                    videoElement.setAttribute("poster",url);
+                    videoElement.setAttribute("height","175")
+
+                    arrayVideoBTN[i].appendChild(videoElement);
+                }                
+            }
+
+        </script>
+
+    </body>
+</html>
