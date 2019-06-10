@@ -1,322 +1,501 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Dashboard</title>
-        <link href="https://cloud.enrouteviewmedia.com/img/taxi-26.png" type="image/x-icon" rel="icon" />
-        <link href="https://cloud.enrouteviewmedia.com/img/taxi-26.png" type="image/x-icon" rel="shortcut icon" />
-        <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/jquery.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="https://cloud.enrouteviewmedia.com/css/bootstrap.min.css" />
-        
-        <link rel="stylesheet" type="text/css" href="https://cloud.enrouteviewmedia.com/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="https://cloud.enrouteviewmedia.com/css/cake.generic.css" />
-        <link rel="stylesheet" type="text/css" href="https://cloud.enrouteviewmedia.com/css/notification.css" />
 
-        <link rel="stylesheet" type="text/css" href="modaljs/css/modal-video.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/modal-video@2.0.1/css/modal-video.min.css">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Dashboard</title>
+    <link href="https://cloud.enrouteviewmedia.com/img/taxi-26.png" type="image/x-icon" rel="icon" />
+    <link href="https://cloud.enrouteviewmedia.com/img/taxi-26.png" type="image/x-icon" rel="shortcut icon" />
+    <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cloud.enrouteviewmedia.com/css/bootstrap.min.css" />
 
-    </head>
-    <body class="page-pages-dashboard">
-        <div id="container">
-            <div id="header" class="not-printable">
-                <div id="wrapper">
+    <link rel="stylesheet" type="text/css" href="https://cloud.enrouteviewmedia.com/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://cloud.enrouteviewmedia.com/css/cake.generic.css" />
+    <link rel="stylesheet" type="text/css" href="https://cloud.enrouteviewmedia.com/css/notification.css" />
+
+    <link rel="stylesheet" type="text/css" href="modaljs/css/modal-video.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/modal-video@2.0.1/css/modal-video.min.css">
+
+    <style>
+        #accordion p {
+            margin: 0px;
+            font-weight: bolder;
+        }
+    </style>
+
+</head>
+
+<body class="page-pages-dashboard">
+    <div id="container">
+        <div id="header" class="not-printable">
+            <div id="wrapper">
                 <div id="logo">
-                    <a href="/pages/dashboard"
-                    ><img src="https://cloud.enrouteviewmedia.com/img/enroutelogo.png" height="60px"
-                    /></a>
+                    <a href="/pages/dashboard"><img src="https://cloud.enrouteviewmedia.com/img/enroutelogo.png"
+                            height="60px" /></a>
                 </div>
                 <div id="logout" class="header-buttons">
-                    <a href="/users/logout"
-                    ><p>Logout</p>
-                    <img src="https://cloud.enrouteviewmedia.com/img/logout.png"
-                    /></a>
+                    <a href="/users/logout">
+                        <p>Logout</p>
+                        <img src="https://cloud.enrouteviewmedia.com/img/logout.png" />
+                    </a>
                 </div>
                 <div id="settings" class="header-buttons">
-                    <a href="/users/settings"
-                    ><p>Settings</p>
-                    <img src="https://cloud.enrouteviewmedia.com/img/settings-32.png"
-                    /></a>
+                    <a href="/users/settings">
+                        <p>Settings</p>
+                        <img src="https://cloud.enrouteviewmedia.com/img/settings-32.png" />
+                    </a>
                 </div>
-                <a
-                    id="manual-button"
+                <a id="manual-button"
                     href="http://www.enrouteviewmedia.com/wp-content/uploads/2018/11/Enroute-LCD-Manuals-v1.2.pdf"
-                    target="_blank"
-                    class="link-button header-buttons"
-                    ><p>Manual</p></a
-                >
-                </div>
-                <div id="breadcrumbs" class="not-printable">
+                    target="_blank" class="link-button header-buttons">
+                    <p>Manual</p>
+                </a>
+            </div>
+            <div id="breadcrumbs" class="not-printable">
 
-                    <p><a href="/pages/dashboard">Home</a></p>
+                <p><a href="/pages/dashboard">Home</a></p>
 
-                    <div class="system-status">
-                        <p>
+                <div class="system-status">
+                    <p>
                         <b>130</b> devices (<span class="green">2</span> /
                         <span class="red">128</span>)
-                        </p>
-                        <div class="green-bg circle"></div>
-                        <p>ttca-server is running</p>
-                    </div>
-                    <p id="save-status"></p>
+                    </p>
+                    <div class="green-bg circle"></div>
+                    <p>ttca-server is running</p>
+                </div>
+                <p id="save-status"></p>
+            </div>
+        </div>
+        <div id="hover-popup" class="hover-popup">Something</div>
+
+        <!--Start here-->
+        <div class="container ">
+            <div class="row breadcrumb mb-0 pb-0">
+                <div class="col">
+
+                    <p class="breadcrumb-item"><a>Home</a> </p>
+                    <p class="breadcrumb-item"><a>Some Where</a> </p>
+                    <p class="breadcrumb-item active"><a>Help</a> </p>
                 </div>
             </div>
-            <div id="hover-popup" class="hover-popup">Something</div>
 
-            <!--Start here--> 
-            <div class="container ">
-                <div class="row breadcrumb mb-0 pb-0">
-                    <div class="col">
-                    
-                        <p class="breadcrumb-item"><a>Home</a> </p>
-                        <p class="breadcrumb-item"><a>Some Where</a> </p>
-                        <p class="breadcrumb-item active"><a>Help</a> </p>
+            <!--Video-->
+
+            <!--Row 1-->
+            <div class="row pb-3">
+                <div class="col-4">
+                    <div class="card text-center">
+                        <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video"
+                            data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                        </button>
+                        <h5 class="card-title">How to register your screen</h5>
                     </div>
                 </div>
 
-                <!--Video-->
+                <div class="col-4">
+                    <div class="card text-center">
+                        <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video"
+                            data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                        </button>
+                        <h5 class="card-title">How to register your screen</h5>
+                    </div>
+                </div>
 
-                <!--Row 1-->
-                <div class="row pb-3">
-                    <div class="col-4">
-                        <div class="card text-center">
-                            <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
-                            </button>        
-                            <h5 class="card-title">How to register your screen</h5>
+                <div class="col-4">
+                    <div class="card text-center">
+                        <button id="VideoBTN" class="btn js-video-btn  p-0" data-channel="video"
+                            data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                        </button>
+                        <h5 class="card-title">How to register your screen</h5>
+                    </div>
+                </div>
+            </div>
+            <!--End Row 1-->
+
+            <!--Row 2-->
+            <div class="row">
+                <div class="col-3">
+                    <div class="card text-center">
+                        <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video"
+                            data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                        </button>
+                        <h5 class="card-title">How to register your screen</h5>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card text-center">
+                        <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video"
+                            data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                        </button>
+                        <h5 class="card-title">How to register your screen</h5>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card text-center">
+                        <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video"
+                            data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                        </button>
+                        <h5 class="card-title">How to register your screen</h5>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card text-center">
+                        <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video"
+                            data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
+                        </button>
+                        <h5 class="card-title">How to register your screen</h5>
+                    </div>
+                </div>
+            </div>
+            <!--End Row 2-->
+
+            <!--End Video-->
+
+            <!-- Manual PDF-->
+            <div class="card text-center my-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-10 text-left">
+                            <h4 class="card-title mt-0">Installation and operating manual for intaxi tablets</h4>
+
                         </div>
+                        <div class="col-2 text-right">
+                            <a
+                                href="http://www.enrouteviewmedia.com/wp-content/uploads/2018/11/Enroute-LCD-Manuals-v1.2.pdf">
+                                <img src="./images/pdf.png" style="width:37px; height:39px" alt="Operation Manual">
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div class="col-4">
-                        <div class="card text-center">
-                            <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
-                            </button>        
-                            <h5 class="card-title">How to register your screen</h5>
-                        </div>
-                    </div>
+                </div>
+            </div>
+            <!--End of Manual PDF-->
 
-                    <div class="col-4">
-                        <div class="card text-center">
-                            <button id="VideoBTN" class="btn js-video-btn  p-0" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
-                            </button>        
-                            <h5 class="card-title">How to register your screen</h5>
+            <!--FAQ-->
+            <div class="card text-center my-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6 text-left">
+                            <h4 class="card-title mt-0">FAQ</h4>
                         </div>
                     </div>
-                </div>  
-                <!--End Row 1-->
+                    <div class="row text-left">
+                        <div class="col">
+                            <div id="accordion">
+                                <!--Question 1-->
+                                <div class="card">
+                                    <div class="card-header" id="headingOne" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        <h5 class="card-title my-0">
+                                            Can the ads be location and time programmed days, or months, or years in
+                                            advance?
+                                        </h5>
+                                    </div>
 
-                <!--Row 2-->
-                <div class="row">
-                    <div class="col-3">
-                        <div class="card text-center">
-                            <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
-                            </button>        
-                            <h5 class="card-title">How to register your screen</h5>
-                        </div>
-                    </div>
+                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Yes, our DigiStream View ad provides this feature</p>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <div class="col-3">
-                        <div class="card text-center">
-                            <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
-                            </button>        
-                            <h5 class="card-title">How to register your screen</h5>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card text-center">
-                            <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
-                            </button>        
-                            <h5 class="card-title">How to register your screen</h5>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card text-center">
-                            <button id="VideoBTN" class="btn js-video-btn p-0" data-channel="video" data-video-url="https://www.youtube.com/embed/39vC2k-5ZR0?autoplay=1&modestbranding=1&rel=0">
-                            </button>        
-                            <h5 class="card-title">How to register your screen</h5>
-                        </div>
-                    </div>
-                </div>  
-                <!--End Row 2-->
+                                <!--Question 2-->
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <h5 class="card-title my-0">Can the ads shown on the taxi top LED display be
+                                            different from the ads shown on the inside taxi screen?</h5>
+                                    </div>
 
-                <!--End Video-->
-                
-                <!-- Manual PDF-->
-                <div class="card text-center my-3">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-6 text-left">
-                                <h4 class="card-title mt-0">Installation and operating manual for intaxi tablets</h4>
-                               
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Yes. The inside taxi tablet and LED taxi topper units are independent
+                                                from
+                                                each other. You can choose to upload different ads and different formats
+                                                (images or videos) independently.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Question 3-->
+                                <div class="card">
+                                    <div class="card-header" id="headingThree" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        <h5 class="card-title my-0">What is the recommended duration for a video ad?
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>The industry recommended duration for a video ad is 20 seconds. This was
+                                                set
+                                                as a default but it can be changed by the user.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Question 4-->
+                                <div class="card">
+                                    <div class="card-header" id="headingFour" data-toggle="collapse"
+                                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        <h5 class="card-title my-0">What is the recommended duration for a static image
+                                            ad?</h5>
+                                    </div>
+
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>The industry recommended duration for static image ad is 10 seconds.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Question 5-->
+                                <div class="card">
+                                    <div class="card-header" id="headingFive" data-toggle="collapse"
+                                        data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        <h5 class="card-title my-0">Are there updates and upgrades available?</h5>
+                                    </div>
+
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Yes, whenever needed, the enRoute View Media team will provide software
+                                                and
+                                                hardware updates to its customers.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Question 6-->
+                                <div class="card">
+                                    <div class="card-header" id="headingSix" data-toggle="collapse"
+                                        data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        <h5 class="card-title my-0">Can I use your DigiStream View with my own LED taxi
+                                            top screens or my own inside taxi digital display tablet screen or monitors
+                                            I purchased elsewhere?</h5>
+                                    </div>
+
+                                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Please note that we cannot guarantee the compatibility of our DigiStream
+                                                View ad management platform with any generic LED taxi topper. We have
+                                                specific hardware requirements for the LED taxi tops that need to be
+                                                satisfied for proper operation of our DigiStream View.
+                                                <b>Please contact us for more details to discuss your customized options
+                                                    before you make your hardware purchase.</b></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Question 7-->
+                                <div class="card">
+                                    <div class="card-header" id="headingSeven" data-toggle="collapse"
+                                        data-target="#collapseSeven" aria-expanded="false"
+                                        aria-controls="collapseSeven">
+                                        <h5 class="card-title my-0">For the inside taxi tablet display, can the tablet’s
+                                            built-in camera be disabled or removed?</h5>
+                                    </div>
+
+                                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Yes, we can customize the inside taxi tablet hardware and remove the
+                                                built-in camera. Please contact us for more details to discuss your
+                                                customized option.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Question 8-->
+                                <div class="card">
+                                    <div class="card-header" id="headingEight" data-toggle="collapse"
+                                        data-target="#collapseEight" aria-expanded="false"
+                                        aria-controls="collapseEight">
+                                        <h5 class="card-title my-0">Can the playing time of the customized video be
+                                            adjusted to any duration?</h5>
+                                    </div>
+
+                                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Yes, it can. The default playing time is set to 20 seconds. However,
+                                                DigiStream view management software offers the option of adjusting the
+                                                length of the play time of the video by simply entering the time in
+                                                default
+                                                status when you upload the video.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Question 9-->
+                                <div class="card">
+                                    <div class="card-header" id="headingNine" data-toggle="collapse"
+                                        data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                        <h5 class="card-title my-0">When uploading my ads, do I need to keep the LED
+                                            taxi top or the inside taxi tablet display screen turned on?</h5>
+                                    </div>
+
+                                    <div id="collapseNine" class="collapse" aria-labelledby="headingNine"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>No, the LED taxi top or the inside taxi tablet display can be either on
+                                                or
+                                                off. The DigiStream View ad management system uploads the ads to the
+                                                enRoute
+                                                View Media cloud serve which is accessed by the LED taxi topper.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Question 10-->
+                                <div class="card">
+                                    <div class="card-header" id="headingTen" data-toggle="collapse"
+                                        data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                        <h5 class="card-title my-0">Can I edit the size of the geofenced region?</h5>
+                                    </div>
+
+                                    <div id="collapseTen" class="collapse" aria-labelledby="headingTen"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Your assigned global geofenced region (country, or geographical region,
+                                                territory, state, province, etc.) is set by enRoute View Media when you
+                                                initially subscribe for the service. You will be allowed to edit and set
+                                                areas within this assigned region. If you like your global geofenced
+                                                region
+                                                to be edited or modified, you only need to provide the information of
+                                                your
+                                                new global geofenced region to the enRoute View Media team and they will
+                                                do
+                                                it for you.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Question 11-->
+                                <div class="card">
+                                    <div class="card-header" id="headingEleven" data-toggle="collapse"
+                                        data-target="#collapseEleven" aria-expanded="false"
+                                        aria-controls="collapseEleven">
+                                        <h5 class="card-title my-0">Can I edit the default cities to include the rest of
+                                            the country’s cities and regions?</h5>
+                                    </div>
+
+                                    <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>If you wish to add additional cities and regions, you only need to
+                                                contact enRoute View Media and they will be added to your region of
+                                                operation.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-6 text-right">
-                                <a href="http://www.enrouteviewmedia.com/wp-content/uploads/2018/11/Enroute-LCD-Manuals-v1.2.pdf">
-                                    <img src="./images/pdf.png" style="width:37px; height:39px" alt="Operation Manual">
-                                </a>  
-                            </div>
-                            
                         </div>
-
                     </div>
-                </div>
-                <!--End of Manual PDF-->
 
-                <!--FAQ-->
-                <div class="card text-center my-3">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-6 text-left">
-                                <h4 class="card-title mt-0">FAQ</h4>          
-                            </div>     
-                        </div>
-                        <div class="row text-left">
-                            <div class="col"> 
-                                <div id="accordion">
-                                    <!--Question 1-->
-                                    <div class="card">
-                                        <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                            <h5 class="card-title my-0" >
-                                                Question 1?
-                                            </h5>            
-                                        </div>
-                                    
-                                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                        </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Question 2-->
-                                    <div class="card">
-                                        <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            <h5 class="card-title my-0" >Question 2?</h5>            
-                                        </div>
-                                    
-                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                        </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Question 3-->
-                                    <div class="card">
-                                        <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            <h5 class="card-title my-0" >Question 3?</h5>            
-                                        </div>
-                                    
-                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                        </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Question 4-->
-                                    <div class="card">
-                                        <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                            <h5 class="card-title my-0" >Question 4?</h5>            
-                                        </div>
-                                    
-                                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>  
-                            </div>  
-                        </div>
-
-                    </div>
-                </div>
-                <!--End of FAQ-->
-
-            </div>
-
-            <!--End here-->
-
-            <div class="colored-section green mt-5">
-                <div class="lined-header">
-                <h1>Overview</h1>
-                </div>
-                <div class="large-buttons">
-                <a href="/admin/view_regions"
-                    ><div class="large-button">
-                    <p class="main">27</p>
-                    <p class="sub">Registered devices</p>
-                    </div></a>
-                <a href="/admin/view_devices"
-                    ><div class="large-button">
-                    <p class="main">4 hrs</p>
-                    <p class="sub">Device hours this week</p>
-                    </div></a>
-                <a href="/admin/view_devices"
-                    ><div class="large-button">
-                    <p class="main">2462 hrs</p>
-                    <p class="sub">Total device hours</p>
-                    </div></a>
-                <a href="/franchise/device_billing"
-                    ><div class="large-button">
-                    <p class="main">USD $2603.57</p>
-                    <p class="sub">in Agency transfers</p>
-                    </div></a>
                 </div>
             </div>
+            <!--End of FAQ-->
 
         </div>
 
-        <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/popper.min.js"></script>
-        <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/jquery.cookie.js"></script>
-        <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/dashboard.js"></script>
-        <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/default.js"></script>
-        <script src="modaljs/js/modal-video.js"></script>
+        <!--End here-->
 
-        <script>
-            var resizefunc = [];
+        <div class="colored-section green mt-5">
+            <div class="lined-header">
+                <h1>Overview</h1>
+            </div>
+            <div class="large-buttons">
+                <a href="/admin/view_regions">
+                    <div class="large-button">
+                        <p class="main">27</p>
+                        <p class="sub">Registered devices</p>
+                    </div>
+                </a>
+                <a href="/admin/view_devices">
+                    <div class="large-button">
+                        <p class="main">4 hrs</p>
+                        <p class="sub">Device hours this week</p>
+                    </div>
+                </a>
+                <a href="/admin/view_devices">
+                    <div class="large-button">
+                        <p class="main">2462 hrs</p>
+                        <p class="sub">Total device hours</p>
+                    </div>
+                </a>
+                <a href="/franchise/device_billing">
+                    <div class="large-button">
+                        <p class="main">USD $2603.57</p>
+                        <p class="sub">in Agency transfers</p>
+                    </div>
+                </a>
+            </div>
+        </div>
 
-            window.addEventListener('DOMContentLoaded',function(){	
-                new ModalVideo(".js-video-btn");  
+    </div>
 
-                var arrayVideoBTN = [];
-                var arrayUrl = [];
-                var arrayVideoId = [];
+    <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/popper.min.js"></script>
+    <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/dashboard.js"></script>
+    <script type="text/javascript" src="https://cloud.enrouteviewmedia.com/js/default.js"></script>
+    <script src="modaljs/js/modal-video.js"></script>
 
-                arrayVideoBTN = document.querySelectorAll('#VideoBTN');
+    <script>
+        var resizefunc = [];
 
-                arrayVideoBTN.forEach(element => {
-                    arrayUrl.push(element.getAttribute("data-video-url"));
+        window.addEventListener('DOMContentLoaded', function () {
+            new ModalVideo(".js-video-btn");
 
-                    arrayVideoId.push(youtube_parser(element.getAttribute("data-video-url")))
-                });
+            var arrayVideoBTN = [];
+            var arrayUrl = [];
+            var arrayVideoId = [];
 
-                addVideoElement(arrayVideoBTN, arrayVideoId);
-            });  
+            arrayVideoBTN = document.querySelectorAll('#VideoBTN');
 
-            //Get the video id from youtube video 
-            function youtube_parser(url){
-                var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
-                var match = url.match(regExp);
-                return (match&&match[7].length==11)? match[7] : false;
+            arrayVideoBTN.forEach(element => {
+                arrayUrl.push(element.getAttribute("data-video-url"));
+
+                arrayVideoId.push(youtube_parser(element.getAttribute("data-video-url")))
+            });
+
+            addVideoElement(arrayVideoBTN, arrayVideoId);
+        });
+
+        //Get the video id from youtube video 
+        function youtube_parser(url) {
+            var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+            var match = url.match(regExp);
+            return (match && match[7].length == 11) ? match[7] : false;
+        }
+
+        //Add the <video> for display thumbnail
+        function addVideoElement(arrayVideoBTN, arrayVideoId) {
+            for (let i = 0; i < arrayVideoBTN.length; i++) {
+
+                let url = "https://ytimg.googleusercontent.com/vi/" + arrayVideoId[i] + "/hqdefault.jpg";
+
+                let videoElement = document.createElement("video");
+                videoElement.setAttribute("poster", url);
+                // videoElement.setAttribute("height","175")
+                videoElement.setAttribute('width', '100%');
+
+
+                arrayVideoBTN[i].appendChild(videoElement);
             }
+        }
 
-            //Add the <video> for display thumbnail
-            function addVideoElement(arrayVideoBTN, arrayVideoId) {               
-                for (let i = 0; i < arrayVideoBTN.length; i++) {       
+    </script>
 
-                    let url = "https://ytimg.googleusercontent.com/vi/"+arrayVideoId[i]+"/hqdefault.jpg";
-                    
-                    let videoElement = document.createElement("video");
-                    videoElement.setAttribute("poster",url);
-                    // videoElement.setAttribute("height","175")
-                    videoElement.setAttribute('width', '100%');
+</body>
 
-
-                    arrayVideoBTN[i].appendChild(videoElement);
-                }                
-            }
-
-        </script>
-
-    </body>
 </html>
